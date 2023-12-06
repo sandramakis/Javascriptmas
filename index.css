@@ -1,0 +1,178 @@
+html,
+body,
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font-family: "Karla", sans-serif;
+  --body-bg: #1e1f25;
+  --btn-bg: #000;
+  --btn-color: #cbcbcb;
+  --btn-color-hover: #fff;
+  --grad-color1: #eeaf61;
+  --grad-color2: #fb9062;
+  --grad-color3: #ee5d6c;
+  --grad-color4: #ce4993;
+  --grad-color5: #6a0d83;
+}
+
+body {
+  background-color: var(--body-bg);
+}
+
+div.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.98);
+  margin: 50vh 0;
+}
+
+div.container:hover {
+  transform: scale(1);
+}
+
+div.container:hover button {
+  color: var(--btn-color-hover);
+}
+
+.button-border {
+  background: linear-gradient(115deg, var(--grad-color3), var(--grad-color5));
+  padding: 2px;
+}
+
+button.button {
+  font-family: var(--font-family);
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  padding: 5px;
+  border: none;
+}
+
+/* SCRIMBA CHALLENGE DAY 4  */
+:root {
+  --radius: 5px;
+  --main-frame: 15px solid white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("/xmas-bg3.png");
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+  padding: 0;
+}
+
+img {
+  height: 450px;
+  display: block;
+}
+
+.left-door {
+  border: var(--main-frame);
+  border-right: 0;
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+}
+
+.left-door img {
+  border-right: 0;
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+  animation: right-open 0.3s backwards;
+}
+
+.right-door {
+  border: var(--main-frame);
+  border-left: 0;
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
+
+.right-door img {
+  border-left: 0;
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  animation: right-open 0.3s backwards;
+}
+
+.joke-display {
+  position: absolute;
+  background-color: white;
+  opacity: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: var(--main-frame);
+  height: 100%;
+  padding: 1em;
+  cursor: pointer;
+}
+
+/* animation */
+
+@keyframes display-joke {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes left-open {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes right-open {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* OPEN STATES  */
+.right-door.open {
+  animation: right-open 0.3s forwards;
+}
+
+.left-door.open {
+  animation: left-open 0.3s forwards;
+}
+
+.joke-display.open {
+  animation: display-joke 0.3s forwards;
+}
