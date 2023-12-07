@@ -16,6 +16,9 @@ body,
   --grad-color3: #ee5d6c;
   --grad-color4: #ce4993;
   --grad-color5: #6a0d83;
+
+  --jeopardy-blue: #060ce9;
+  --font-color-main: #fff;
 }
 
 body {
@@ -175,4 +178,54 @@ img {
 
 .joke-display.open {
   animation: display-joke 0.3s forwards;
+}
+
+/* DAY 5: JEOPARDY CARD FLIP */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+div.card {
+  font-family: sans-serif;
+  position: relative;
+  top: 4%;
+  width: 500px;
+  height: 250px;
+  padding: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  transform-style: preserve-3d;
+  background-color: var(--jeopardy-blue);
+  color: var(--font-color-main);
+  border-radius: 10px;
+  transition: 0.2s all;
+}
+
+.card-back {
+  display: none;
+  line-height: 10rem;
+}
+
+div.card:hover {
+  transition: 0.2s all;
+  transform: rotateY(180deg);
+}
+
+div.card:hover .content {
+  transition: transform 0.5s;
+}
+
+div.card:hover .card-back {
+  backface-visibility: visible;
+  display: block;
+  transform: rotateY(-180deg);
+}
+
+div.card:hover .card-front {
+  display: none;
+  backface-visibility: hidden;
 }
