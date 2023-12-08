@@ -25,7 +25,7 @@ body {
   background-color: var(--body-bg);
 }
 
-div.container {
+div.button-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,11 +33,11 @@ div.container {
   margin: 50vh 0;
 }
 
-div.container:hover {
+div.button-container:hover {
   transform: scale(1);
 }
 
-div.container:hover button {
+div.button-container:hover button {
   color: var(--btn-color-hover);
 }
 
@@ -187,9 +187,8 @@ div.card {
   font-family: sans-serif;
   position: relative;
   top: 70%;
-  right: 5%;
   width: 400px;
-  height: 250px;
+  height: 400px;
   padding: 3rem;
   text-transform: uppercase;
   text-align: center;
@@ -279,5 +278,68 @@ div.form-container .paired-people {
 
   & li {
     background-color: coral;
+  }
+}
+
+/* DAY 8: ANIMATED PROGRESS BAR */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --progressbar-bg: lightgrey;
+  --start: red;
+  --middle: blue;
+  --finish: green;
+}
+
+.progress-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45vw;
+  padding: 0 20px;
+}
+
+div.progress-bar {
+  width: 100%;
+  height: 15px;
+  background-color: var(--progressbar-bg);
+  border-radius: 30px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+}
+
+div.progress-status {
+  animation: progressAnimation 5s ease-in infinite;
+  border-radius: 30px;
+  width: 10%;
+  padding-left: 2px;
+}
+
+div.progress-status {
+  width: 100%;
+}
+
+@keyframes progressAnimation {
+  0% {
+    width: 0;
+    background-color: var(--start);
+  }
+
+  50% {
+    width: 50%;
+    background-color: yellow;
+  }
+
+  /* make it pause around 80% */
+  80% {
+    width: 100%;
+  }
+
+  100% {
+    width: 100%;
+    background-color: var(--finish);
   }
 }
