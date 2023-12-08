@@ -54,7 +54,7 @@ button.button {
   border: none;
 }
 
-/* SCRIMBA CHALLENGE DAY 4  */
+/* DAY 4: AI Christmas Joke Generator */
 :root {
   --radius: 5px;
   --main-frame: 15px solid white;
@@ -62,12 +62,6 @@ button.button {
 
 * {
   box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
 }
 
 body {
@@ -85,7 +79,7 @@ h1 {
 main {
   display: flex;
   margin: 0 auto;
-  position: relative;
+  position: absolute;
   padding: 0;
 }
 
@@ -192,8 +186,9 @@ html {
 div.card {
   font-family: sans-serif;
   position: relative;
-  top: 4%;
-  width: 500px;
+  top: 70%;
+  right: 5%;
+  width: 400px;
   height: 250px;
   padding: 3rem;
   text-transform: uppercase;
@@ -207,7 +202,6 @@ div.card {
 
 .card-back {
   display: none;
-  line-height: 10rem;
 }
 
 div.card:hover {
@@ -221,11 +215,69 @@ div.card:hover .content {
 
 div.card:hover .card-back {
   backface-visibility: visible;
-  display: block;
+  display: grid;
+  place-items: center;
   transform: rotateY(-180deg);
 }
 
 div.card:hover .card-front {
   display: none;
   backface-visibility: hidden;
+}
+
+/* DAY 6: SANTA PAIR */
+div.form-container {
+  position: absolute;
+  top: 150vh;
+  text-align: center;
+  background-image: url("https://t3.ftcdn.net/jpg/05/50/94/98/360_F_550949839_0uKeVZlLe8u840Pj2BRryEWpu3TGeH5K.jpg");
+  background-size: cover;
+  width: 100dvw;
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+  font-family: inter, sans-serif;
+
+  & input {
+    padding: 8px;
+  }
+
+  & li {
+    list-style-type: none;
+    background-color: yellow;
+    width: 60%;
+    padding: 5px;
+    margin: 2px;
+    text-transform: capitalize;
+  }
+}
+
+form.get-pair-form {
+  padding: 10px;
+  font-size: 15px;
+
+  & label {
+    line-height: 20px;
+    color: #eee;
+  }
+
+  & ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+div.form-container .paired-people {
+  background-color: beige;
+  display: grid;
+  place-items: center;
+  width: 100dvw;
+  height: 80dvh;
+  display: none;
+
+  & li {
+    background-color: coral;
+  }
 }
