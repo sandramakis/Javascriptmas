@@ -10,7 +10,6 @@
     />
     <link rel="stylesheet" href="card.css" />
   </head>
-
   <body>
     <main>
       <section class="left-col" id="image-container">
@@ -31,10 +30,11 @@
         <form>
           <label>Describe a Christmassy image for your e-card 🎄</label>
           <div class="form-inner">
-            <textarea
+            <input
+              type="text"
               placeholder="A winter scene..."
               id="user-input"
-            ></textarea>
+            />
             <button type="submit" class="submit-btn">
               <img src="send.svg" class="btn-send" />
             </button>
@@ -43,6 +43,11 @@
       </dialog>
     </main>
 
+    <div class="progress-bar-container">
+      <div class="progress-bar">
+        <div class="progress-bar progress-status"></div>
+      </div>
+    </div>
     <script src="index.js" type="module"></script>
   </body>
 </html>

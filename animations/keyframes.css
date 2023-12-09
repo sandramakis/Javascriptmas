@@ -1,0 +1,48 @@
+@keyframes display-joke {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes left-open {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes right-open {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes progressAnimation {
+  0% {
+    width: 0;
+    background-color: var(--start);
+  }
+
+  50% {
+    width: 50%;
+    background-color: yellow;
+  }
+
+  /* make it pause around 80% */
+  80% {
+    width: 100%;
+  }
+
+  100% {
+    width: 100%;
+    background-color: var(--finish);
+  }
+}

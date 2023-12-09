@@ -19,44 +19,47 @@ dialogModal.show();
  **/
 
 const hf = new HfInference("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");
-
-const input = document.querySelector("#user-input");
+const input = document.querySelector("input#user-input");
 const sendBtn = document.querySelector(".submit-btn");
-console.log(input, sendBtn);
+// const displayProgessBar = document.querySelector(".progress-bar-container");
 
-// const result = await hf.textToImage({
-//   inputs: `${input.value}`,
-//   model: "stabilityai/stable-diffusion-2",
-//   parameters: {
-//     negative_prompt: "blurry",
-//   },
-// });
-
-const getInputValue = (e) => {
+const getInputValue = async (e) => {
   e.preventDefault();
   dialogModal.close();
-  //   dialogModal.style.display = "hidden";
 
-  try {
-    if (input.value !== "") {
-      document.querySelector(".placeholder-img").style.display = "none";
+  // try {
+  if (input.value !== "") {
+    setTimeout(() => {}, 2000);
+    const result = await hf.textToImage({
+      inputs: input.value,
+      model: "stabilityai/stable-diffusion-2",
+      parameters: {
+        negative_prompt: "blurry",
+      },
+    });
 
-      //   convert the blob object into a url and pass it as it's src
-      const img = document.createElement("img");
+    //   convert the blob object into a url and pass it as it's src
+    const img = document.createElement("img");
 
-      const imageURL = URL.createObjectURL(result);
-      img.src = imageURL;
+    const imageURL = URL.createObjectURL(result);
+    img.src = imageURL;
 
-      imageContainer.append(img);
-    } else {
-      alert("Please input a valid description!");
-      document.querySelector(".placeholder-img").style.display = "block";
-      dialogModal.show();
-      return;
-    }
-  } catch (error) {
-    console.error(error);
+    imageContainer.append(img);
+    document.querySelector(".placeholder-img").style.display = "none";
+
+    // setTimeout(() => {
+    //   displayProgessBar.style.display = "block";
+    // }, 200);
+  } else {
+    alert("Please input a valid description!");
+    document.querySelector(".placeholder-img").style.display = "block";
+    dialogModal.show();
+    return;
   }
 };
+//   catch (error) {
+//     console.error(error);
+//   }
+// };
 
 sendBtn.addEventListener("click", getInputValue);
