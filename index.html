@@ -9,17 +9,41 @@
       href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,800;1,200&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courgette&family=Roboto:wght@400&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <div class="button-container">
-      <div class="button-border">
-        <button type="button" class="button">Start Coding!</button>
+    <!-- DAY 2: STYLE A COLORFUL CANDY -->
+    <section>
+      <div class="button-container">
+        <div class="button-border">
+          <button type="button" class="button">Start Coding!</button>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <!-- DAY 4: AI CHRISTMAS JOKE GENERATOR -->
+    <section id="window-container">
+      <section class="left-door">
+        <img src="left-door-min.png" />
+      </section>
+
+      <section class="joke-display">
+        <h1 id="joke-display">
+          Santa gave me a book on anti-gravity. It's impossible to put down.
+        </h1>
+      </section>
+
+      <section class="right-door">
+        <img src="right-door-min.png" />
+      </section>
+    </section>
 
     <!-- DAY 5: JEOPARDY CARD FLIP  -->
-    <div class="card">
+    <section class="card">
       <div class="content">
         <div class="card-front">
           <h2>
@@ -31,50 +55,65 @@
           <h2>What is the marquee tag</h2>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- DAY 6: SANTA PAIR MATCH -->
-    <div class="form-container">
-      <form class="get-pair-form">
-        <label for="peoples-name">
-          <input
-            style="width: 30vw; text-align: center"
-            type="text"
-            name="peoples-name"
-            id=""
-            placeholder="Names of people to be paired"
-          />
+    <section>
+      <div class="form-container">
+        <form class="get-pair-form">
+          <label for="peoples-name">
+            <input
+              style="width: 30vw; text-align: center"
+              type="text"
+              name="peoples-name"
+              id=""
+              placeholder="Names of people to be paired"
+            />
+            <br />
+          </label>
           <br />
-        </label>
-        <br />
 
-        <ul class="people"></ul>
-      </form>
+          <ul class="people"></ul>
+        </form>
 
-      <input type="button" value="Pair Us!" class="submit-button" />
-      <div class="paired-people">
-        <ul></ul>
-      </div>
-    </div>
-
-    <!-- DAY 8; ANIMATED PROGRESS BAR -->
-    <div style="background-color: beige; padding: 20px;">
-      <img
-        width="100%"
-        height="50%"
-        src="https://resources.licensingprep.com/wp-content/uploads/2019/09/cheers-congratulations-meme.jpg"
-        alt="meme"
-      />
-      <p style="padding: 10px; color: #111">
-        When I finally get the animation to pause towards the end
-      </p>
-      <div class="progress-bar-container">
-        <div class="progress-bar">
-          <div class="progress-bar progress-status"></div>
+        <input type="button" value="Pair Us!" class="submit-button" />
+        <div class="paired-people">
+          <ul></ul>
         </div>
       </div>
-    </div>
+    </section>
 
-    <script src="main.js"></script>
+    <!-- DAY 8; ANIMATED PROGRESS BAR -->
+    <section>
+      <div style="background-color: beige; padding: 20px">
+        <img
+          width="100%"
+          height="50%"
+          src="https://resources.licensingprep.com/wp-content/uploads/2019/09/cheers-congratulations-meme.jpg"
+          alt="meme"
+        />
+        <p style="padding: 10px; color: #111">
+          When I finally get the animation to pause towards the end
+        </p>
+        <div class="progress-bar-container">
+          <div class="progress-bar">
+            <div class="progress-bar progress-status"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DAY 9: AI CHRISTMAS CARD GENERATOR -->
+    <section class="redirect">
+      <div style="background-color: cadetblue; padding: 5rem">
+        <h4>
+          Click <a href="Christmas-E-card(Day 9)/index.html">here</a> to
+          generate your Christmas E-Card
+        </h4>
+        <p>Merry Christmas in Advance 🎄</p>
+      </div>
+    </section>
+
+    <script src="main.js" type="module"></script>
   </body>
 </html>

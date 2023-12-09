@@ -25,6 +25,10 @@ body {
   background-color: var(--body-bg);
 }
 
+section {
+  margin: 5rem 0;
+}
+
 div.button-container {
   display: flex;
   justify-content: center;
@@ -64,23 +68,16 @@ button.button {
   box-sizing: border-box;
 }
 
-body {
+/* body {
   background-image: url("/xmas-bg3.png");
   background-size: cover;
   display: flex;
   height: 100vh;
   align-items: center;
-}
+} */
 
 h1 {
   font-family: "Poppins", sans-serif;
-}
-
-main {
-  display: flex;
-  margin: 0 auto;
-  position: absolute;
-  padding: 0;
 }
 
 img {
@@ -175,15 +172,8 @@ img {
 }
 
 /* DAY 5: JEOPARDY CARD FLIP */
-body,
-html {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-}
 
-div.card {
+section.card {
   font-family: sans-serif;
   position: relative;
   top: 70%;
@@ -203,16 +193,16 @@ div.card {
   display: none;
 }
 
-div.card:hover {
+section.card:hover {
   transition: 0.2s all;
   transform: rotateY(180deg);
 }
 
-div.card:hover .content {
+section.card:hover .content {
   transition: transform 0.5s;
 }
 
-div.card:hover .card-back {
+section.card:hover .card-back {
   backface-visibility: visible;
   display: grid;
   place-items: center;
@@ -343,3 +333,6 @@ div.progress-status {
     background-color: var(--finish);
   }
 }
+
+/* DAY 9; AI CHRISTMAS E-CARD GENERATOR */
+/* A link to the page for DAY 9 is on the HTML and on screen */
