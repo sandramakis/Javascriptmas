@@ -1,4 +1,6 @@
-"use strict";
+// node_modules / dotenv.config();
+
+("use strict");
 // DAY 2
 // ADD HOVER EFFECT WITH JS
 const container = document.querySelector(".container"),
@@ -82,9 +84,6 @@ document
         });
         console.log(response);
 
-        // const lines = response.generated_text.split('\n').slice(1);
-        // console.log(lines)
-
         jokeDisplay.textContent = response.generated_text;
       })();
     }, 1000);
@@ -125,7 +124,6 @@ function generateSecretSantaPairs(arr) {
   // Your code here
 
   const shuffledArray = shuffleArray(arr);
-  console.log(shuffledArray);
 
   const result = {};
 
@@ -137,7 +135,6 @@ function generateSecretSantaPairs(arr) {
     result[arr[i]] = shuffledArray[i];
   }
 
-  console.log(result);
   return result;
 }
 
@@ -166,7 +163,7 @@ const submitBtn = document.querySelector('input[type="button"]');
 const displayPair = document.querySelector(".paired-people");
 
 const names = [];
-const results = {};
+// const results = {};
 
 function submitForm(e) {
   if (input.value !== "") {
@@ -214,3 +211,15 @@ submitBtn.addEventListener("click", pairPeople);
 
 // DAY 9; AI CHRISTMAS CARD GENERATOR
 // To visit the code on DAY 9, use the link on the HTML
+
+// DAY 10: Rockin' Around
+// Challenge: Add code here to make the youtube player play the new YouTube song
+
+const player = document.getElementById("player");
+
+function playSong(videoId) {
+  // Challenge: Add code here to make the youtube player play the new YouTube song
+
+  const videoURL = `https://www.youtube.com/embed/${videoId}`;
+  player.src = videoURL;
+}
