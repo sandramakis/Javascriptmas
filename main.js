@@ -213,7 +213,6 @@ submitBtn.addEventListener("click", pairPeople);
 // To visit the code on DAY 9, use the link on the HTML
 
 // DAY 10: Rockin' Around
-// Challenge: Add code here to make the youtube player play the new YouTube song
 
 const player = document.getElementById("player");
 
