@@ -159,6 +159,46 @@
       </div>
     </section>
 
+    <!-- DAY 12- SANTA'S GIFT SORTING -->
+    <section class="day-12-section">
+      <div style="color: #eee">
+        <p>
+          Santa has these gifts, but it needs to be sorted, let's help Santa
+          sort these gifts.
+
+          <br />
+          [ "guitar 🎸", "skates ⛸", "bear 🧸", "magnet 🧲", "laptop 💻", "games
+          console 🎮 ", "jewellery 💍", "kite 🪁", ];
+        </p>
+      </div>
+
+      <div class="button-div">
+        <button class="alphabetically">Sort A-Z</button>
+        <button class="reverse-alphabetically">Sort Z-A</button>
+      </div>
+      <div class="display"></div>
+    </section>
+
+    <!-- Day 13: Christmas Dinner Picker -->
+    <section class="day-13-section">
+      <h1>Christmas Dinner Picker</h1>
+      <p class="result" id="result">
+        Your ideal Christmas dinner is <span id="food">...</span>
+      </p>
+
+      <form method="get">
+        <label for="name">How many guests are coming?</label>
+        <input id="num-input" type="number" id="guests" name="guests" />
+        <div class="veggie">
+          <input type="checkbox" id="vegetarian-input" name="vegetarian" />
+          <label for="name">Vegetarian?</label>
+        </div>
+
+        <button id="btn" type="submit">Calculate</button>
+        <button id="retry" type="button">Retry</button>
+      </form>
+    </section>
+
     <script src="main.js" type="module"></script>
   </body>
 </html>

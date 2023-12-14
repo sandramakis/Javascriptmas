@@ -222,3 +222,199 @@ function playSong(videoId) {
   const videoURL = `https://www.youtube.com/embed/${videoId}`;
   player.src = videoURL;
 }
+
+// DAY 12: SANTA'S GIFT SORTER
+const xmasGifts = [
+  "guitar 🎸",
+  "skates ⛸",
+  "bear 🧸",
+  "magnet 🧲",
+  "laptop 💻",
+  "games console 🎮 ",
+  "jewellery 💍",
+  "kite 🪁",
+];
+
+const sortAlphabetically = document.querySelector("button.alphabetically");
+const sortReverseAlphabetically = document.querySelector(
+  "button.reverse-alphabetically"
+);
+const display = document.querySelector("div.display");
+
+/**
+ * Challenge:
+ * 1. Sort the array twice. Alphabetically and reverse alphabetically.
+ **/
+
+// Sort A-Z
+sortAlphabetically.addEventListener(
+  "click",
+  function () {
+    const sortedAZ = xmasGifts.sort();
+    console.log("A-Z: ", sortedAZ);
+
+    display.style.background = "beige";
+    const ol = document.createElement("ol");
+    display.append(ol);
+
+    xmasGifts.forEach((gift) => {
+      const li = document.createElement("li");
+      li.innerText = gift;
+
+      ol.append(li);
+    });
+  },
+  { once: true }
+);
+//["bear 🧸", "games console 🎮 ", "guitar 🎸", "jewellery 💍", "kite 🪁", "laptop 💻", "scarf 🧣", "skates ⛸"]
+
+// Sort Z-A
+sortReverseAlphabetically.addEventListener(
+  "click",
+  function () {
+    display.style.background = "beige";
+
+    const sortedZA = xmasGifts.sort((a, b) => {
+      return a > b ? -1 : 1;
+    });
+    console.log("Z-A: ", sortedZA);
+
+    const ol = document.createElement("ol");
+    display.append(ol);
+
+    sortedZA.forEach((gift) => {
+      const li = document.createElement("li");
+      li.innerText = gift;
+
+      ol.append(li);
+    });
+  },
+  { once: true }
+);
+
+//["skates ⛸", "scarf 🧣", "laptop 💻", "kite 🪁", "jewellery 💍", "guitar 🎸", "games console 🎮 ", "bear 🧸"
+
+// DAY 13- Christmas Dinner Picker
+
+const numberOfGuests = document.querySelector("input[type=number]");
+const isVegeterian = document.querySelector("input[type=checkbox]");
+
+const dinnerForm = document.querySelector(".day-13-section form"),
+  calculateBtn = document.querySelector("#btn"),
+  retryBtn = document.querySelector("#retry");
+const food = document.querySelector("span#food");
+
+let dinner;
+
+// VEGAN CHRISTMAS DINNER
+const veganFoods = {
+  one: [
+    "Pear and Greens Salad",
+    "Vegetarian and Vegan Roasted Chestnut Soup",
+    "Smoked Salmon Crostini",
+    "Brocolli Quinoa Cake",
+    "Spaghetti squash with Chard, Walnuts and Chevre",
+    "Butternut Lasagna with Mushrooms and Sage",
+    "Italian Baked Beans and Greens",
+    "BUTTERNUT LASAGNA",
+    "MUSHROOM RISOTTO WITH FRIZZLED LEEKS",
+  ],
+
+  twoOrMore: [
+    "Classic Holiday Green Bean Casserole",
+    "Hasselback Butternut Squash",
+    "Bread Stuffing",
+    "Cheddar Cheese Scalloped Potatoes",
+    "Kidney Bean Burger",
+    "Quick Bean Burritos",
+    "Creamy Mac and Cheese",
+    "ORECCHIETTE PASTA WITH BROCCOLI SAUCE",
+  ],
+
+  fiveOrMore: [
+    "Creamed Spinach With Parmesan Cheese",
+    "ALOO GOBI (INDIAN-SPICED POTATOES & CAULIFLOWER)",
+    "GOLDEN CAULIFLOWER DAL W/ RED LENTILS, COCONUT AND SPINACH",
+    "EGGPLANT LASAGNA",
+    "VEGGIE POT PIE WITH ROASTED BUTTERNUT, LENTILS AND KALE",
+    "INDIAN SHEPHERD’S PIE",
+    "Sweet Potato Curry",
+    "Healthy Vegan Lasagna",
+    "TOFU STIR-FRY WITH BROCCOLINI AND MUSHROOMS",
+  ],
+};
+
+// NON-VEGAN CHRISTMAS DINNER
+const nonveganFoods = {
+  one: [
+    "Chicken and mushroom wellington",
+    "Gochujang-glazed celeriac with black beans & green salsa",
+    "No Yeast Dinner Rolls",
+    "Apple Cranberry Cobbler",
+    "Classic Sugar Cookies",
+    "Orange-stuffed Christmas duck",
+    "Gingerbread With Lemon Glaze",
+    "Homemade Mashed Potatoes",
+  ],
+
+  twoOrMore: [
+    "Roast guinea fowl with chestnut, sage & lemon stuffing",
+    "Golden-glazed carrot, mushroom & hazelnut tart",
+    "One-pot partridge with drunken potatoes",
+    "Beef fillet, Marmite mash & roasted cabbage",
+    "Brown butter-poached halibut with celeriac purée & caper crumbs",
+    "Nonalcoholic Eggnog",
+    "Glazed ham, carrots, Brussels sprouts, potatoes au gratin",
+    "Roasted Brussels Sprouts, Butternut Squash, and Cranberries",
+  ],
+
+  fiveOrMore: [
+    "Simple Orange-Glazed Pork Roast",
+    "French Baked Ham With Spiced Apples and Pears",
+    "Roasted Rack of Lamb",
+    "Instant Pot Coq au Vin",
+    "Maple-Glazed Roasted Parsnips",
+    "Honey-Glazed Baby Carrots",
+    "Baked Corn Casserole",
+  ],
+};
+
+function pickDinner(e) {
+  e.preventDefault();
+
+  // make sure there's no empty value
+  if (numberOfGuests.value !== "") {
+    food.textContent = "";
+
+    // check for vegeterians and the number pf guests
+    if (isVegeterian.checked && numberOfGuests.value == 1) {
+      dinner = Math.floor(Math.random() * veganFoods.one.length);
+      food.innerText = veganFoods.one[dinner];
+    } else if (isVegeterian.checked && numberOfGuests.value <= 4) {
+      dinner = Math.floor(Math.random() * veganFoods.twoOrMore.length);
+      food.innerText = veganFoods.twoOrMore[dinner];
+      3;
+    } else {
+      dinner = Math.floor(Math.random() * veganFoods.fiveOrMore.length);
+      food.innerText = veganFoods.fiveOrMore[dinner];
+    }
+
+    // non-vegetarians
+    if (!isVegeterian.checked && numberOfGuests.value == 1) {
+      dinner = Math.floor(Math.random() * nonveganFoods.one.length);
+      food.innerText = nonveganFoods.one[dinner];
+    } else if (!isVegeterian.checked && numberOfGuests.value <= 4) {
+      dinner = Math.floor(Math.random() * nonveganFoods.twoOrMore.length);
+      food.innerText = nonveganFoods.twoOrMore[dinner];
+    } else {
+      dinner = Math.floor(Math.random() * nonveganFoods.fiveOrMore.length);
+      food.innerText = nonveganFoods.fiveOrMore[dinner];
+    }
+  } else {
+    alert("Please, input the number of guests for the dinner");
+  }
+}
+
+dinnerForm.addEventListener("submit", pickDinner);
+calculateBtn.addEventListener("click", pickDinner);
+retryBtn.addEventListener("click", pickDinner);
