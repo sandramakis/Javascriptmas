@@ -418,3 +418,35 @@ function pickDinner(e) {
 dinnerForm.addEventListener("submit", pickDinner);
 calculateBtn.addEventListener("click", pickDinner);
 retryBtn.addEventListener("click", pickDinner);
+
+// DAY 14- Loely Elf
+const elf = document.getElementById("elf");
+const duplicateBtn = document.querySelector(".day-14-section #btn");
+const elfHangout = document.querySelector(".elf-hangout-zone");
+
+let totalcount = 1;
+
+function duplicateElf() {
+  /** Challenge:
+    - Write a function to duplicate the elf when the button is clicked.
+    - See index.css for optional styling challenges.
+  **/
+
+  if (totalcount <= 100 && elfHangout.childElementCount <= 100) {
+    for (let i = 0; i <= totalcount; i++) {
+      const clonedElf = elf.cloneNode(true);
+      elfHangout.appendChild(clonedElf);
+    }
+  } else {
+    alert("Max of 100 reached!");
+  }
+
+  totalcount * 2;
+}
+
+/** Stretch goals:
+  - Write a function to give the elves some tools, or a cup of tea!
+  - Limit the total number of elves to 100.
+**/
+
+duplicateBtn.addEventListener("click", duplicateElf);

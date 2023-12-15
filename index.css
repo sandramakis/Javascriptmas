@@ -498,6 +498,75 @@ section.day-13-section {
   }
 }
 
+/* DAY 14: Lonely Elf */
+section.day-14-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  color: var(--dark-green);
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3ibitctZ-aJmGvZQ6DMf7ib_5mBZbl17_eBCrnIXW5HvnQVq3RFkUJfKdfB3S5yzm5Fs&usqp=CAU");
+  background-size: cover;
+
+  :root {
+    --wine-red: #c7375f;
+    --bright-red: #d42d2f;
+    --dark-green: #344d2f;
+    --light-green: #77a047;
+    --gold: #fac57d;
+    --snow: #f0f4f7;
+  }
+
+  & .elf-hangout-zone {
+    /* Limit the number of elves to 6 per row. */
+    /* Make sure that the elves stay in the elf hangout zone, 
+      no matter how many there are. */
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 2em;
+    min-width: 200px;
+    min-height: 200px;
+    max-width: 80dvw;
+    overflow-y: scroll;
+    background: var(--wine-red);
+    padding: 1em 2em;
+    border-radius: 5px;
+    display: inline-flex;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+      rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  }
+
+  & h1 {
+    margin: 0;
+  }
+
+  & .elf {
+    font-size: 40px;
+  }
+
+  & button {
+    padding: 1em 2em;
+    border: none;
+    font-size: 1.2rem;
+    background-color: var(--dark-green);
+    color: var(--snow);
+    border-radius: 999px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+      rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  }
+
+  & button:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+  }
+}
+
 @keyframes progress {
   from {
     width: 20%;
