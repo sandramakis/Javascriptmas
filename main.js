@@ -450,3 +450,26 @@ function duplicateElf() {
 **/
 
 duplicateBtn.addEventListener("click", duplicateElf);
+
+// DAY 15: ARCHERY TARGET
+const rings = document.querySelector(".rings");
+
+const displayClicked = document.querySelector("p.display-clicked");
+
+rings.addEventListener(
+  "click",
+  function (e) {
+    console.log(e.target);
+
+    if (e.target === document.querySelector(".ring-1")) {
+      displayClicked.textContent = "You hit the black ring";
+    } else if (e.target === document.querySelector(".ring-2")) {
+      displayClicked.textContent = "You hit the blue ring";
+    } else if (e.target === document.querySelector(".ring-3")) {
+      displayClicked.textContent = "You hit the red ring";
+    } else if (e.target === document.querySelector(".bullseye")) {
+      displayClicked.textContent = "You hit the BULLS EYE!";
+    }
+  },
+  { capture: false }
+);

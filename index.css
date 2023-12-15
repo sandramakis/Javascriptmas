@@ -566,6 +566,70 @@ section.day-14-section {
     transform: scale(1.03);
   }
 }
+:root {
+  --black: #282828;
+  --blue: #2892f9;
+  --red: #fb2f27;
+  --yellow: #fdfe29;
+}
+
+/* DAY 15: ARCHERY TARGET */
+section.day-15-section {
+  background-image: url("https://wallpapercosmos.com/w/full/4/f/b/1106212-2784x1856-desktop-hd-archery-wallpaper-photo.jpg");
+  height: 100dvh;
+  width: 100dvw;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  & .rings {
+    background-color: beige;
+    width: 200px;
+    height: 200px;
+    margin: 10% auto;
+    position: relative;
+  }
+
+  & .ring {
+    position: absolute;
+    border-radius: 100%;
+    padding: 5px;
+    background-color: yellow;
+    top: 80%;
+    animation: rotateArchery 1s ease-in infinite;
+  }
+
+  & .ring-1 {
+    background-color: var(--black);
+    height: 80px;
+    width: 80px;
+    top: 25%;
+    left: 25%;
+  }
+
+  & .ring-2 {
+    background-color: var(--blue);
+    height: 60px;
+    width: 60px;
+    top: 11%;
+    left: 11%;
+  }
+
+  & .ring-3 {
+    background-color: var(--red);
+    height: 40px;
+    width: 40px;
+    top: 13%;
+    left: 13%;
+  }
+
+  & .bullseye {
+    background-color: var(--yellow);
+    height: 20px;
+    width: 20px;
+    top: 20%;
+    left: 20%;
+  }
+}
 
 @keyframes progress {
   from {
@@ -574,5 +638,12 @@ section.day-14-section {
 
   to {
     width: 50%;
+  }
+}
+
+@keyframes rotateArchery {
+  from {
+    width: 80%;
+    transform: rotate(90deg);
   }
 }
