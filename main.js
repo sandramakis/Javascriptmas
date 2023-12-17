@@ -1,6 +1,6 @@
 // node_modules / dotenv.config();
 
-("use strict");
+"use strict";
 // DAY 2
 // ADD HOVER EFFECT WITH JS
 const container = document.querySelector(".container"),
@@ -473,3 +473,80 @@ rings.addEventListener(
   },
   { capture: false }
 );
+
+// DAY 16: Naughty list, nice list
+const niceListEL = document.querySelector(".nice-list");
+const naughtyListEl = document.querySelector(".naughty-list");
+const sortBtn = document.querySelector(".day-16-section #btn");
+
+const addNewName = document.querySelector(".day-16-section input[type=text]");
+console.log(addNewName);
+
+const sorteesArr = [
+  {
+    name: "David",
+    hasBeenGood: false,
+  },
+  {
+    name: "Del",
+    hasBeenGood: true,
+  },
+  {
+    name: "Valerie",
+    hasBeenGood: false,
+  },
+  {
+    name: "Astrid",
+    hasBeenGood: true,
+  },
+];
+
+const naughtyList = sorteesArr.filter((feeling) => {
+  if (feeling.hasBeenGood === false) {
+    return feeling.name;
+  }
+});
+
+const niceList = sorteesArr.filter((feeling) => {
+  if (feeling.hasBeenGood === true) {
+    return feeling.name;
+  }
+});
+
+const sortLists = () => {
+  // display naughty list
+  for (let i = 0; i < naughtyList.length; i++) {
+    const li = document.createElement("li");
+    const names = naughtyList[i].name;
+    li.textContent = names;
+    document.querySelector("#naughty-list").append(li);
+  }
+
+  // display nice list
+  for (let i = 0; i < niceList.length; i++) {
+    const li = document.createElement("li");
+    const names = niceList[i].name;
+    li.textContent = names;
+    document.querySelector("#nice-list").append(li);
+  }
+};
+
+const addNewNaughty = () => {
+  if (addNewName.value !== "") {
+    const li = document.createElement("li");
+    li.textContent = addNewName.value;
+    document.querySelector("#naughty-list").append(li);
+  } else alert("Please, input a name!");
+};
+
+const addNewNice = () => {
+  if (addNewName.value !== "") {
+    const li = document.createElement("li");
+    li.textContent = addNewName.value;
+    document.querySelector("#nice-list").append(li);
+  } else alert("Please, input a name!");
+};
+
+sortBtn.addEventListener("click", sortLists, { once: true });
+document.querySelector("#add-naughty").addEventListener("click", addNewNaughty);
+document.querySelector("#add-nice").addEventListener("click", addNewNice);
