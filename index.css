@@ -711,6 +711,43 @@ section.day-16-section {
   }
 }
 
+/* Day 17: Word Carousel */
+
+:root {
+  --bg-word: #5134ff;
+}
+
+section.day-17-section {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ-gHlDaFggU3RYPMTIJsydWgb22NJW9g3Rbl9JGuDdg&s");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  & div.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 40% auto;
+  }
+
+  & h1.love {
+    color: beige;
+  }
+
+  & h1.lovely-things::before {
+    content: "reading";
+    animation: changeText 3s ease-in infinite;
+  }
+
+  & h1.lovely-things {
+    background: var(--bg-word);
+    margin-left: 10px;
+    color: white;
+    padding: 6px;
+    border-radius: 5px;
+  }
+}
+
 @keyframes progress {
   from {
     width: 20%;
@@ -725,5 +762,17 @@ section.day-16-section {
   from {
     width: 80%;
     transform: rotate(90deg);
+  }
+}
+
+@keyframes changeText {
+  0% {
+    content: "singing";
+  }
+  50% {
+    content: "music";
+  }
+  100% {
+    content: "travelling";
   }
 }
