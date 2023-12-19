@@ -131,7 +131,7 @@ button {
 }
 
 div.progress-bar {
-  width: 100%;
+  width: 200px;
   height: 15px;
   background-color: var(--progressbar-bg);
   border-radius: 30px;
@@ -139,7 +139,6 @@ div.progress-bar {
 }
 
 div.progress-status {
-  animation: progressAnimation 5s ease-in infinite;
   border-radius: 30px;
   width: 10%;
   padding-left: 2px;
@@ -147,4 +146,9 @@ div.progress-status {
 
 div.progress-status {
   width: 100%;
+}
+
+.progress-bar-container.displayAnimation {
+  animation: progressAnimation 5s ease-in infinite;
+  display: block;
 }
