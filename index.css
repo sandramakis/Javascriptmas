@@ -748,35 +748,6 @@ section.day-17-section {
   }
 }
 
-@keyframes progress {
-  from {
-    width: 20%;
-  }
-
-  to {
-    width: 50%;
-  }
-}
-
-@keyframes rotateArchery {
-  from {
-    width: 80%;
-    transform: rotate(90deg);
-  }
-}
-
-@keyframes changeText {
-  0% {
-    content: "singing";
-  }
-  50% {
-    content: "music";
-  }
-  100% {
-    content: "travelling";
-  }
-}
-
 :root {
   --radius: 3px;
   --main-color: #ffffff;
@@ -875,5 +846,62 @@ section.day-19-section {
     background-color: var(--main-color);
     border-radius: var(--radius);
     margin: 0 0.2em;
+  }
+}
+
+/* DAY 21: Expand Search Bar  */
+:root {
+  --search-border: #bbb;
+  --search-focus-border: #3a71ca;
+}
+
+section.day-21-section {
+  margin: auto 40vh;
+  padding: 10px;
+  width: 100vh;
+
+  & input {
+    width: 45%;
+    padding: 5px;
+    animation: ease-in 1s;
+    border: 1px solid var(--search-border);
+    animation: 3s ease-in;
+  }
+
+  & input.expand {
+    width: 100%;
+  }
+
+  & input:focus {
+    border: 2px solid var(--search-focus-border);
+  }
+}
+
+@keyframes progress {
+  from {
+    width: 20%;
+  }
+
+  to {
+    width: 50%;
+  }
+}
+
+@keyframes rotateArchery {
+  from {
+    width: 80%;
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes changeText {
+  0% {
+    content: "singing";
+  }
+  50% {
+    content: "music";
+  }
+  100% {
+    content: "travelling";
   }
 }
