@@ -3,7 +3,7 @@
 "use strict";
 // DAY 2
 // ADD HOVER EFFECT WITH JS
-const container = document.querySelector(".container"),
+const container = document.querySelector(".button-container"),
   buttonBorder = document.querySelector(".button-border");
 
 function addHover() {
@@ -480,7 +480,6 @@ const naughtyListEl = document.querySelector(".naughty-list");
 const sortBtn = document.querySelector(".day-16-section #btn");
 
 const addNewName = document.querySelector(".day-16-section input[type=text]");
-console.log(addNewName);
 
 const sorteesArr = [
   {
@@ -552,7 +551,6 @@ document.querySelector("#add-naughty").addEventListener("click", addNewNaughty);
 document.querySelector("#add-nice").addEventListener("click", addNewNice);
 
 // DAY 18- Debug Jingle Words
-import JSConfetti from "js-confetti";
 const word = "santa";
 const wordArr = word.split("");
 const wordDisplay = document.getElementById("word-display");
@@ -599,18 +597,18 @@ function handleGuess(e) {
   input.value = "";
 }
 
-function checkWin(guess) {
-  if (word === guess) {
-    const jsConfetti = new JSConfetti();
-    jsConfetti.addConfetti({
-      emojis: ["🧑‍🎄", "🎅"],
-      emojiSize: 50,
-      confettiNumber: 60,
-      confettiRadius: 6,
-    });
-    jsConfetti.addConfetti();
-  }
-}
+// function checkWin(guess) {
+//   if (word === guess) {
+//     const jsConfetti = new JSConfetti();
+//     jsConfetti.addConfetti({
+//       emojis: ["🧑‍🎄", "🎅"],
+//       emojiSize: 50,
+//       confettiNumber: 60,
+//       confettiRadius: 6,
+//     });
+//     jsConfetti.addConfetti();
+//   }
+// }
 
 // Day 20: Save Santa
 const dangerArray = [
@@ -636,7 +634,7 @@ function saveSanta(arr) {
 
   const flattenArr = arr.flat(Infinity);
   const regex =
-    /[\u{1F47A}\u{1F981}\u{1F42F}\u{1F608}\u{1F43B}\u{1F9D8}\u{1F479}\u{1F479}]/iu;
+    /[\u{1F47A}\u{1F981}\u{1F42F}\u{1F608}\u{1F43B}\u{1F9D8}\u{1F479}]/iu;
 
   const filteredEmojis = flattenArr.filter((emoji) => !regex.test(emoji));
 
@@ -650,3 +648,17 @@ function saveSanta(arr) {
 
 saveSanta(dangerArray);
 // Check the returned results from saveSanta()
+
+// DAY 21: Expand search bar
+const searchBar = document.querySelector(".day-21-section input[type=search]");
+
+searchBar.addEventListener("click", function () {
+  this.classList.add("expand");
+  this.style.animation = "ease-out 2s";
+  this.placeholder = "";
+});
+
+searchBar.addEventListener("mouseout", function () {
+  this.classList.remove("expand");
+  this.placeholder = "Search...";
+});
