@@ -662,3 +662,43 @@ searchBar.addEventListener("mouseout", function () {
   this.classList.remove("expand");
   this.placeholder = "Search...";
 });
+
+// DAY 24- Chrustmas Tree Lights
+/**
+ * 🎄 Challenge:
+ * 1. The Christmas tree's lights should switch
+ *    on and off every 800 miliseconds.
+ *
+ * Stretch Goal:
+ *    Make the blue and red lights flash alternately.
+ **/
+
+const lights = document.querySelectorAll(".lights");
+const redLights = document.querySelectorAll(".red");
+const blueLights = document.querySelectorAll(".blue");
+
+function switchChristmasLights(e) {
+  console.log(e);
+
+  const star = document.querySelector(".star");
+  setInterval(() => {
+    lights.forEach((light) => {
+      light.classList.toggle("lights-on");
+    });
+
+    // toggle light on between red and blue
+    redLights.forEach((redLight) => {
+      if (redLight.classList.contains("lights-on")) {
+        blueLights.forEach((blueLight) => {
+          blueLight.classList.remove("lights-on");
+        });
+      } else {
+        redLight.classList.remove("lights-on");
+      }
+    });
+
+    star.classList.toggle("lights-on");
+  }, 800);
+}
+
+window.addEventListener("load", switchChristmasLights);
